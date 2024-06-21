@@ -6,8 +6,8 @@ export class JumbleJungle {
     this.name = data.name
     this.body = data.body
     this.fastestTime = null
-    this.startTime = new Date()
-    this.endTime = new Date()
+    this.startTime = data.createdAt ? new Date(data.createdAt) : new Date()
+    this.endTime = data.endTime ? new Date(data.endTime) : new Date()
   }
   get listTemplate() {
     return `
@@ -22,12 +22,12 @@ export class JumbleJungle {
               </div>`
   }
   get StartTime() {
-    return `this.startTime.toLocaleString('en-US', { minute: "numeric", second: "2-digit" })`
+    return this.startTime.toLocaleString('en-US', { minute: "numeric", second: "2-digit" })
   }
   get EndTime() {
-    return `this.endTime.toLocaleString('en-US', { minute: "numeric", second: "2-digit", })`
+    return this.endTime.toLocaleString('en-US', { minute: "numeric", second: "2-digit", })
   }
   get FastestTime() {
-    return `this.fastestTime = Number(this.EndTime) - Number(this.StartTime)`
+    return this.fastestTime = Number(this.EndTime) - Number(this.StartTime)
   }
 }

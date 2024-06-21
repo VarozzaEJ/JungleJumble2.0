@@ -5,6 +5,7 @@ class JumbleJungleService {
     const selectedJumble = AppState.jumbles.find((jumble) => jumble.id == ID)
     AppState.activeJumble = selectedJumble
     console.log(AppState.activeJumble)
+    console.log(selectedJumble.StartTime)
   }
 
 }
