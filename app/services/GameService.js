@@ -4,19 +4,17 @@ class GameService {
   checkJumble(newJumble) {
     console.log(newJumble)
     const jumble = AppState.activeJumble
+    const startTime = jumble.startTime
+    const endTime = jumble.endTime
+    let takenTime = endTime - startTime
     console.log(jumble.body)
     if (jumble.body === newJumble) {
-      window.alert('🥳 You Won!!')
+      console.log('🥳 You Won!!', takenTime)
+
     }
     else {
-      window.alert('U STINK')
+      console.log('U STINK')
     }
-  }
-  startGame() {
-
-  }
-  endGame() {
-
   }
 
 }

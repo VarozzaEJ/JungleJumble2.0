@@ -5,14 +5,14 @@ export class JumbleJungle {
     this.id = generateId()
     this.name = data.name
     this.body = data.body
-    this.fastestTime = null
+    this.fastestTime = 999
     this.startTime = data.createdAt ? new Date(data.createdAt) : new Date()
     this.endTime = data.endTime ? new Date(data.endTime) : new Date()
   }
   get listTemplate() {
     return `
     <h5><span><button onclick="app.JumbleJunglesController.selectJumble('${this.id}')"
-                          class="btn btn-dark">Start</button></span>${this.name} </h5>`
+                          class="btn btn-dark">Start</button></span>${this.name}<p class="m-1"><i class="mdi mdi-clock">${this.fastestTime}</i></p> </h5>`
   }
   get selctedTemplate() {
     return `
